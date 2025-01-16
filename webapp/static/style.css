@@ -1,0 +1,43 @@
+.error {
+    color: red;
+}
+
+.toc {
+    font-size: small;
+}
+
+.revision-id {
+    color: darkgrey;
+}
+
+.revision-id, .tag-id {
+    font-family: monospace;
+}
+
+.tag-id {
+    background-color: gold;
+}
+
+.platform {
+    font-style: italic;
+}
+
+.repository-title {
+    color: navy;
+}
+
+.repository-name-short, .revision-detail-title {
+    font-weight: bold;
+}
+.repository {
+    padding: 0.5em;
+}
+
+.hidden {
+    display: none;
+}
+
+.revision-detail-value {
+    font-family: monospace;
+    color: darkgrey;
+}

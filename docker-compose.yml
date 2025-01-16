@@ -1,0 +1,30 @@
+services:
+
+  webapp:
+    stop_signal: SIGINT
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    volumes:
+      - registry-files:/registry
+    environment:
+      - REGISTRY_URL=registry:5000
+      - REGISTRY_DIR=/registry
+    depends_on:
+      - registry
+
+  registry:
+    image: registry:2
+    volumes:
+      - registry-files:/var/lib/registry  # as set in the image default configuration
+    ports:
+      - 5000:5000
+    environment:
+      # https://distribution.github.io/distribution/about/configuration/
+      # activates deleting a an image/tag from the registry
+      - REGISTRY_STORAGE_DELETE_ENABLED=true
+
+volumes:
+  registry-files:

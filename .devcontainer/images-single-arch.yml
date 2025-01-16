@@ -1,0 +1,9 @@
+docker.io:
+    images:
+        debian:
+            - trixie-20250113-slim
+            - bookworm-20250113-slim
+            - 12.9-slim
+        nginx:
+            - 1.27.3-alpine
+    tls-verify: true

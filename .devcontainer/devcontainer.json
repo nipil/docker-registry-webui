@@ -1,0 +1,23 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/debian
+
+// DRY: Could not reference ${remoteEnv:APP_DIR} in `mounts.target` nor `workspaceFolder`
+
+{
+	"name": "docker-registry-webui",
+	"dockerComposeFile": [
+		"../docker-compose.yml"
+	],
+	"service": "webapp",
+	"overrideCommand": true,
+	"mounts": [
+		{
+			"type": "bind",
+			"source": ".",
+			"target": "/opt/docker-registry-webapp"
+		}
+	],
+	"workspaceFolder": "/opt/docker-registry-webapp",
+	"onCreateCommand": ".devcontainer/install-dev-requirements.sh",
+	"shutdownAction": "stopCompose"
+}

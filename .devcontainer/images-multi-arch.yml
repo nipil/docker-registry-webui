@@ -1,0 +1,5 @@
+docker.io:
+    images:
+        alpine:
+            - "3.21.2"
+    tls-verify: true
