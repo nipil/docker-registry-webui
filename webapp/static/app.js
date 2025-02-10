@@ -161,7 +161,8 @@ async function buildImageRevision(element, repository, revision, manifest) {
         element.replaceChildren(createText("Incomplete manifest data."));
         return;
     }
-    let list = element.appendChild(createElement("ul"));
+    let list = createElement("ul");
+    element.replaceChildren(list);
     list.appendChild(await createImageRevisionDetailMetadata(manifest.metadata));
     list.appendChild(await createImageRevisionDetailConfiguration(manifest.configuration));
     list.appendChild(await createImageRevisionDetailLayers(manifest.layers));
